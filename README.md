@@ -1,8 +1,8 @@
-#Travelog
+# Travelog
 ![](https://github.com/mcheang20/Travelog/blob/master/app/assets/images/travelog.png)
 Share your adventures, explore the world.
 
-##Setup
+## Setup
 
 To get started with testing and development:
 ```
@@ -11,7 +11,7 @@ cd travelog
 rails s
 ```
 
-##Credits
+## Credits
 
 - Travelog uses [Devise](https://github.com/plataformatec/devise) for simple authentication.
 - For image display [lightbox2-rails](https://github.com/gavinkflam/lightbox2-rails) was implemented.
