@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :show, :edit, :update]
   resources :logs
 
+  resources :categories, only: [:index, :new, :create,:show]
+
   get "/all_logs" => 'logs#all_logs', as: :all_logs
   root 'welcome#home'
 end

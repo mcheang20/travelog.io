@@ -16,12 +16,9 @@ class LogsController < ApplicationController
 
   def show
     @log = Log.find(params[:id])
-    authorize @log
     unless @log.public || current_user
       flash[:alert] = "You must be signed in to view private logs."
       redirect_to root_path
-
-    authorize @log
     end
   end
 
