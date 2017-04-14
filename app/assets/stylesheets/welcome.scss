@@ -57,37 +57,22 @@
     font-size: 2em;
   }
   a {
-    font-size: 2em;
+    font-size: 1.5em;
     color: white;
-  }
-  .btn {
-    padding-left: 26px;
-    padding-right: 26px;
-    transition: .5s;
     &:hover {
-      transform: scale(1.2);
+      color: #181A24;
     }
   }
-}
-
-#capOne {
   .btn {
-    border: 2px solid teal;
-    background-color: teal;
-  }
-}
-
-#capTwo {
-  .btn {
-    border: 2px solid #F98825;
-    background-color: #F98825;
-  }
-}
-
-#capThree {
-  .btn {
-    border: 2px solid #098CE3;
-    background-color: #098CE3;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .7s;
+    border: 3px solid white;
+    border-radius: 30px;
+    &:hover {
+      transform: scale(1.2);
+      background-color: white;
+    }
   }
 }
 

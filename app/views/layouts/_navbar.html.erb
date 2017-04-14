@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+  <nav class="nav-index">
+    <ul>
+      <li><%= link_to "Most Popular", "#" %></li>
+      <li><%= link_to "Most Recent","#" %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to "Likes", "#" %></li>
+      <li><%= link_to "Followed", "#" %></li>
+    <% end %>
+    </ul>
+  </nav>
+<% end %>

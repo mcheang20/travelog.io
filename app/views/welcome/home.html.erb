@@ -5,6 +5,7 @@
   </ul>
 </nav>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="modal" class="modal fade"></div>
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -28,7 +29,7 @@
         <div id="capTwo">
           <h1>Explore the World</h1>
           <p>Find your next adventure</p>
-          <%= link_to "Start Exploring", "#", class: 'btn'%>
+          <%= link_to "Start Exploring", all_logs_path, class: 'btn'%>
         </div>
       </div>
     </div>
