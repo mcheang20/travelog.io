@@ -1,14 +1,18 @@
 <nav class="navbar header-nav">
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   <ul class="nav navbar-nav">
     <li> <%= link_to image_tag("travelog_logo.png"), "#" %> </li>
     <li><%= link_to "Learn More", "#" %></li>
     <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-    <ul class="dropdown-menu">
-      <li><a href="#">Action</a></li>
-    </ul>
-  </li>
+      <%= link_to "Regions", "#" %>
+      <ul>
+        <li>
+          <%= link_to "Region 1", "#" %>
+        </li>
+        <li>
+          <%= link_to "Regions 2", "#" %>
+        </li>
+      </ul>
+    </li>
     <li><%= link_to "New Log", new_log_path %></li>
     <li>
       <div class="search-bar">
@@ -20,7 +24,16 @@
     </li>
     <li><%= link_to "Messages", "#" %></li>
     <li><%= link_to "Notifications", "#" %></li>
-    <li><%= link_to "User", "#" %></li>
-  </div>
+    <li>
+      <%= link_to "User", "#" %>
+      <ul>
+        <li>
+          <%= link_to "User Option 1", "#" %>
+        </li>
+        <li>
+          <%= link_to "User Option 2", "#" %>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>

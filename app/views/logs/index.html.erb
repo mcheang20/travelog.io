@@ -1,0 +1,14 @@
+<div class="log-index">
+  <% @logs.each do |log| %>
+    <aside>
+      <%= link_to image_tag(log.image.url(:medium)), log %>
+      <div class="log-desc">
+        <span><%= link_to log.title, log %></span>
+        <p><%= log.description %> </p>
+        <small><%=  link_to log.user.username, user_path(log.user)%></small>
+
+        <small>Posted <%= time_ago_in_words(log.created_at) %> ago, </small>
+      </div>
+    </aside>
+  <% end %>
+</div>

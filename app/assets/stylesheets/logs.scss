@@ -1,3 +1,85 @@
 // Place all the styles related to the logs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* main content */
+.main-content {
+  width: 85%;
+  border-right: 1px solid;
+}
+
+/* side content */
+.side-content {
+  width: 15%;
+}
+/* log show page header */
+.log-header {
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  img {
+    width: 100%;
+  }
+  .log-media {
+    position: absolute;
+    width: 42%;
+    top: 570px;
+    left: 10%;
+  }
+}
+
+/* all sections */
+section {
+  padding: 0 30px;
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+/* section main */
+.main {
+  h1 {
+    margin: 0;
+  }
+  h3 {
+    margin: 0;
+  }
+  div {
+    width: 40%;
+    float: left;
+  }
+}
+
+/* section icons */
+.icons {
+  aside {
+    width: 33%;
+    float: left;
+    text-align: center;
+  }
+  .log-data {
+    background: no-repeat center top;
+    background-size: 50px 50px;
+  }
+}
+
+/* log index page */
+.log-index {
+  aside {
+    width: 33.3%;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    img {
+      width: 90%;
+      text-align: center;
+    }
+  }
+}
+
+.log-desc {
+  text-align: left;
+  padding-left: 5%;
+}

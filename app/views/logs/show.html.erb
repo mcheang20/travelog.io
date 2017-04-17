@@ -1,1 +1,70 @@
-<h1>Wiki Show Page</h1>
+<div id="log-page">
+  <style media="screen">
+    .log-header{ background-image: url(<%= @log.image.url(:large); %>); }
+  </style>
+  <header class="log-header">
+    <div class="log-media">
+      <%= link_to "View All Images", "#",class: 'btn btn-default' %>
+      <%= link_to "View All Videos", "#", class: 'btn btn-default' %>
+    </div>
+  </header>
+  <div class="main-content">
+    <section class="main">
+      <div>
+        <h1><%= @log.title %></h1>
+        <h3><%= @log.description %></h3>
+        <h3><%= @log.category.name %></h3>
+      </div>
+      <div>
+        <p>by <%= link_to @log.user.username, "#"%></p>
+      </div>
+    </section>
+    <section class="icons">
+      <aside>
+        <div class="log-data">
+          <i class="fa fa-heart fa-2x" aria-hidden="true"></i>
+          <h3>Likes</h3>
+        </div>
+      </aside>
+      <aside>
+        <div class="log-data">
+           <i class="fa fa-comments-o fa-2x" aria-hidden="true"></i>
+          <h3>Comments</h3>
+        </div>
+      </aside>
+      <aside>
+        <div class="log-data">
+          <i class="fa fa-eye fa-2x" aria-hidden="true"></i>
+          <h3>Views</h3>
+        </div>
+      </aside>
+    </section>
+
+    <section class="log-content">
+      <h2>About This Story</h2>
+      <p><%= markdown(@log.body)%></p>
+    </section>
+
+    <section class="log-comments">
+      <h4>New Comment</h4>
+      <% if current_user %>
+        <div>
+          <span><%= render 'comments/form', comment: Comment.new, log: @log %></span>
+        </div>
+      <% end %>
+      <div>
+        <h4><i class="fa fa-comments fa-lg" aria-hidden="true"></i> Comments (<%= @log.comments.count %> comments)</h4>
+        <%= render @log.comments %>
+      </div>
+  </div>
+    </section>
+
+    <section class="log-side-bar">
+    </section>
+
+    <section class="user-controls"></section>
+  </div>
+
+  <div class="side-content">
+  </div>
+</div>
