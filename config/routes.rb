@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index, :new, :create,:show]
 
+  post ':username/follow_user', to: 'relationships#follow_user', as: :follow_user
+  post ':username/unfollow_user', to: 'relationships#unfollow_user', as: :unfollow_user
+
   get "/all_logs" => 'logs#all_logs', as: :all_logs
   root 'welcome#home'
 end

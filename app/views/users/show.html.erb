@@ -14,6 +14,15 @@
     <% else %>
     <p> <%= @user.description %></p>
     <% end %>
+    <% if user_is_authorized? %>
+        <p><%= link_to "Edit Profile", edit_user_path, class: 'btn btn-default'%><p>
+      <% else %>
+        <% if current_user_is_following(current_user.id, @user.id) %>
+          <%= link_to 'Unfollow', unfollow_user_path(@user.username), remote: true,  class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
+        <% else %>
+          <div class="follow-tag pull-right"><%= link_to 'Follow', follow_user_path(@user.username), remote: true, class: 'btn follow-button', id: 'follow-button', method: :post %></div>
+        <% end %>
+      <% end %>
   </header>
 
   <section class="user-posts">
