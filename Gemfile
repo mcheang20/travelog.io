@@ -61,3 +61,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'redcarpet'
 
 gem 'font-awesome-sass'
+
+gem 'jquery-slick-rails', '>= 1.6'
+
+gem 'jquery-turbolinks'

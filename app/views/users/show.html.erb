@@ -1,0 +1,43 @@
+<div class="user-page">
+  <header>
+    <%= image_tag(@user.image.url(:medium)) %>
+    <% if @user.role == 'premium' %>
+      <h4>Premium Account</h4>
+    <% end %>
+    <h4> Posts: <%= @user.logs.count %> </h4>
+    <h4> Likes: </h4>
+    <h4> Comments: <%= @user.comments.count %></h4>
+    <h4> Followers: </h4>
+    <p> About Me:</p>
+    <% if @user.description == nil %>
+    <p>No info posted</p>
+    <% else %>
+    <p> <%= @user.description %></p>
+    <% end %>
+  </header>
+
+  <section class="user-posts">
+      <div class="scroller">
+        <% if @user.logs == nil %>
+          <p> You havent posted anything. </p>
+          <% else %>
+            <% @user.logs.each do |log| %>
+              <section class="slick-index">
+                <%= link_to image_tag(log.image.url(:medium)), log %>
+                <a> <%= link_to log.title, log %> </a>
+
+                <p> <%= log.comments.count %> Comments </p>
+
+              </section>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section class="user-likes">
+  </section>
+
+  <section class="user-followers">
+  </section>
+</div>

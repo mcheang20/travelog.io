@@ -12,10 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.slick
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
 $('.carousel').carousel({
   interval: false,
   pause: "false"
+});
+
+jQuery(document).ready(function(){
+  $('.scroller').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    dots: true
+  });
 });

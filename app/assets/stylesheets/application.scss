@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ @import "slick";
+ @import "slick-theme";
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome-sprockets";
@@ -142,4 +144,25 @@ body {
   a{
     font-size: 1.2em;
   }
+}
+
+.scroller {
+  div {
+    text-align: center;
+    font-size: 30px;
+  }
+}
+
+/* slick carousel styles */
+
+.slick-prev::before, .slick-next::before {
+  color: #000;
+}
+
+.slick-next {
+  right: -5px;
+}
+
+.slick-prev {
+  left: -5px;
 }
