@@ -7,9 +7,9 @@ class VotesController < ApplicationController
     @vote.user = current_user
 
     if @vote.save
-      @vote.update_attribute(:value, 1)
+       @vote.update_attribute(:value, 1)
     else
-
+      Notification.create(recipient: @log.user , actor: current_user, action: "like", notifiable: @log )
       @vote = current_user.votes.create(value: 1, log: @log)
     end
     redirect_to logs_path

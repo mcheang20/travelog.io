@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418231032) do
+ActiveRecord::Schema.define(version: 20170418232718) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -53,6 +53,17 @@ ActiveRecord::Schema.define(version: 20170418231032) do
     t.datetime "image_updated_at"
     t.integer  "category_id"
     t.index ["user_id"], name: "index_logs_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "recipient_id"
+    t.integer  "actor_id"
+    t.datetime "read_at"
+    t.string   "action"
+    t.integer  "notifiable_id"
+    t.string   "notifiable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "pics", force: :cascade do |t|

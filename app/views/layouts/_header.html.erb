@@ -24,8 +24,12 @@
       </div>
     </li>
     <li><%= link_to "Messages", "#" %></li>
-    <li><%= link_to "Notifications", "#" %></li>
-    <li>
+    <li data-behavior="notifications">
+      <%= link_to "Notifications", "#" %>
+      <ul data-behavior="notification-items">
+        <span data-behavior="unread-count"></span>
+      </ul>
+    </li>
       <%= link_to current_user.username, user_path(current_user) %>
       <ul>
         <li>

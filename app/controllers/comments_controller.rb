@@ -8,7 +8,12 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to [@log]
+      if @log.user == current_user
+        redirect_to [@log]
+      else
+       Notification.create(recipient: @log.user, actor: current_user, action: "comment", notifiable: @log)
+       redirect_to [@log]
+      end
     end
   end
 

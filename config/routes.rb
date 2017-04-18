@@ -7,6 +7,11 @@ Rails.application.routes.draw do
     resources :pics, only: [:show, :create, :destroy]
     resources :votes, only: [:create, :destroy]
   end
+  resources :notifications do
+  collection do
+    post :mark_as_read
+  end
+end
 
   resources :categories, only: [:index, :new, :create,:show]
 
