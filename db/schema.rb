@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417221445) do
+ActiveRecord::Schema.define(version: 20170418224919) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -79,6 +79,16 @@ ActiveRecord::Schema.define(version: 20170417221445) do
     t.datetime "image_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "value"
+    t.integer  "user_id"
+    t.integer  "log_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["log_id"], name: "index_votes_on_log_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
 end

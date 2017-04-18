@@ -3,6 +3,7 @@
     <aside>
       <%= link_to image_tag(log.image.url(:medium)), log %>
       <div class="log-desc">
+        <small><%= render partial: 'votes/like', locals: { log: log } %></small>
         <span><%= link_to log.title, log %></span>
         <p><%= log.description %> </p>
         <small><%=  link_to log.user.username, user_path(log.user)%></small>
