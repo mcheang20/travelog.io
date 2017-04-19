@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:create, :show, :edit, :update]
   resources :categories, only: [:index, :new, :create,:show]
+  resources :charges, only: [:new, :create, :destroy]
   resources :logs do
     resources :comments, only: [:create, :destroy]
     resources :pics, only: [:show, :create, :destroy]

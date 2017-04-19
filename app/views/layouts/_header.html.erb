@@ -33,7 +33,7 @@
       <%= link_to current_user.username, user_path(current_user) %>
       <ul>
         <li>
-          <%= link_to "User Option 1", "#" %>
+          <%= link_to "Upgrade to Premium", new_charge_path %>
         </li>
         <li>
           <%= link_to "Log Out", destroy_user_session_path, method: :delete %>

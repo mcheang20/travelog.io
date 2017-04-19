@@ -65,3 +65,5 @@ gem 'font-awesome-sass'
 gem 'jquery-slick-rails', '>= 1.6'
 
 gem 'jquery-turbolinks'
+
+gem 'stripe'
