@@ -1,5 +1,6 @@
 class LogsController < ApplicationController
   before_action :authorize_user, only: [:destroy, :edit, :update]
+  impressionist actions: [:show]
 
   def index
     @logs = Log.all

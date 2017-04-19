@@ -7,7 +7,7 @@
         <span><%= link_to log.title, log %></span>
         <p><%= log.description %> </p>
         <small><%=  link_to log.user.username, user_path(log.user)%></small>
-
+        <small><%= log.impressionist_count %> views</small>
         <small>Posted <%= time_ago_in_words(log.created_at) %> ago, </small>
       </div>
     </aside>
