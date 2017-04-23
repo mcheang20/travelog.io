@@ -93,6 +93,12 @@ body {
   border-radius: 0;
 }
 
+nav::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
 .header-nav{
   color: rgba(1,1,1,.4);
   background-color: #28363F;
@@ -105,16 +111,18 @@ body {
   }
   li{
     flex: 1 0 auto;
-    text-align: center;
     padding: 0;
     &:hover {
-      background-color: none;
+      background-color: white;
       }
     }
   a {
     color: white;
-    font-size: 1.3em;
+    font-size: 1em;
     font-weight: 200;
+    display: inline-block;
+    width: 130px;
+    position: relative;
     &:hover {
       background-color: none;
       color: black;
@@ -123,6 +131,11 @@ body {
   img {
     height: 30px;
   }
+}
+
+/* top level */
+nav > ul {
+
 }
 
 /* secondary navbar */

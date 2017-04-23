@@ -1,9 +1,9 @@
 <% if user_signed_in? %>
-<nav class="navbar header-nav">
-  <ul class="nav navbar-nav">
+<nav class="header-nav">
+  <ul>
     <li> <%= link_to image_tag("travelog_logo.png"), "#" %> </li>
     <li><%= link_to "Learn More", "#" %></li>
-    <li class="dropdown">
+    <li>
       <%= link_to "Regions", "#" %>
       <ul>
         <li>
@@ -27,9 +27,10 @@
     <li data-behavior="notifications">
       <%= link_to "Notifications", "#" %>
       <ul data-behavior="notification-items">
-        <span data-behavior="unread-count"></span>
+        <li><span data-behavior="unread-count"></span></li>
       </ul>
     </li>
+    <li>
       <%= link_to current_user.username, user_path(current_user) %>
       <ul>
         <li>
