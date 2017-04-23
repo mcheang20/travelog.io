@@ -4,7 +4,7 @@
   </style>
   <header class="log-header">
     <div class="log-media">
-      <%= link_to "View All Images", "#",class: 'btn btn-default' %>
+      <%= link_to "View All Images", log_pic_path(@log.pics, @log),class: 'btn btn-default' %>
       <%= link_to "View All Videos", "#", class: 'btn btn-default' %>
     </div>
   </header>
@@ -62,7 +62,16 @@
     <section class="log-side-bar">
     </section>
 
-    <section class="user-controls"></section>
+    <section class="user-controls">
+      <% if user_is_authorized_for_log?(@log)%>
+        <div>
+          <h3><i class="fa fa-picture-o" aria-hidden="true"></i> Add Images</h3>
+          <%= render 'pics/form', pic: Pic.new, log: @log %>
+          <h3><i class="fa fa-video-camera" aria-hidden="true"></i> Add Videos</h3>
+          <%= render 'vids/form', vid: Vid.new, log: @log %>
+        </div>
+      <% end %>
+    </section>
   </div>
 
   <div class="side-content">

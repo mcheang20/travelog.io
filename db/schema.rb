@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419003357) do
+ActiveRecord::Schema.define(version: 20170423220257) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -145,6 +145,16 @@ ActiveRecord::Schema.define(version: 20170419003357) do
     t.string   "stripe_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "vids", force: :cascade do |t|
+    t.string   "caption"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "video_file_name"
+    t.string   "video_content_type"
+    t.integer  "video_file_size"
+    t.datetime "video_updated_at"
   end
 
   create_table "votes", force: :cascade do |t|

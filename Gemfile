@@ -69,3 +69,5 @@ gem 'jquery-turbolinks'
 gem 'stripe'
 
 gem 'impressionist'
+
+gem 'paperclip-av-transcoder'
