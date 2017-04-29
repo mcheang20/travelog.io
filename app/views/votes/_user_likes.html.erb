@@ -1,0 +1,15 @@
+<div class="scroller">
+  <% if @user.votes == nil %>
+    <p> You havent posted anything. </p>
+    <% else %>
+      <% @user.votes.each do |vote| %>
+        <section class="slick-index">
+          <%= link_to image_tag(vote.log.image.url(:medium)), log_path(vote.log) %>
+          <a><%= link_to vote.log.title, log_path(vote.log) %></a>
+          <p><%= vote.log.description %></p>
+          <p><%= pluralize(vote.log.votes.count, 'vote') %></p>
+          <p><%= pluralize(vote.log.comments.count, 'comment')%></p>
+        </section>
+      <% end %>
+    <% end %>
+</div>

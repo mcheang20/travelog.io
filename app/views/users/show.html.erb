@@ -1,38 +1,43 @@
 <div class="user-page">
-  <header>
-    <%= image_tag(@user.image.url(:medium)) %>
-    <% if @user.role == 'premium' %>
-      <h4>Premium Account</h4>
-    <% end %>
-    <h4> Posts: <%= @user.logs.count %> </h4>
-    <h4> Likes: </h4>
-    <h4> Comments: <%= @user.comments.count %></h4>
-    <h4> Followers: </h4>
-    <p> About Me:</p>
-    <% if @user.description == nil %>
-    <p>No info posted</p>
-    <% else %>
-    <p> <%= @user.description %></p>
-    <% end %>
-    <% if user_is_authorized? %>
-        <p><%= link_to "Edit Profile", edit_user_path, class: 'btn btn-default'%><p>
-      <% else %>
-        <% if current_user_is_following(current_user.id, @user.id) %>
-          <%= link_to 'Unfollow', unfollow_user_path(@user.username), remote: true,  class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
-        <% else %>
-          <div class="follow-tag pull-right"><%= link_to 'Follow', follow_user_path(@user.username), remote: true, class: 'btn follow-button', id: 'follow-button', method: :post %></div>
-        <% end %>
-    <% end %>
-    <% if current_user.id == @user.id %>
-        <p></p>
-      <% else %>
-        <div class="msg-btn">
-          <%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: 'btn btn-primary' %>
-        </div>
+  <header class="user-header">
+    <div>
+      <%= image_tag(@user.image.url(:medium)) %>
+    </div>
+    <div>
+      <% if @user.role == 'premium' %>
+        <h4>Premium Account</h4>
       <% end %>
+      <h4> Posts: <%= @user.logs.count %> </h4>
+      <h4> Likes: </h4>
+      <h4> Comments: <%= @user.comments.count %></h4>
+      <h4> Followers: </h4>
+      <p> About Me:</p>
+      <% if @user.description == nil %>
+      <p>No info posted</p>
+      <% else %>
+      <p> <%= @user.description %></p>
+      <% end %>
+      <% if user_is_authorized? %>
+          <p><%= link_to "Edit Profile", edit_user_path, class: 'btn btn-default'%><p>
+        <% else %>
+          <% if current_user_is_following(current_user.id, @user.id) %>
+            <%= link_to 'Unfollow', unfollow_user_path(@user.username), remote: true,  class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
+          <% else %>
+            <div class="follow-tag pull-right"><%= link_to 'Follow', follow_user_path(@user.username), remote: true, class: 'btn follow-button', id: 'follow-button', method: :post %></div>
+          <% end %>
+      <% end %>
+      <% if current_user.id == @user.id %>
+          <p></p>
+        <% else %>
+          <div class="msg-btn">
+            <%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+    </div>
   </header>
 
   <section class="user-posts">
+    <h2>Your Posts</h2>
       <div class="scroller">
         <% if @user.logs == nil %>
           <p> You havent posted anything. </p>
@@ -40,18 +45,19 @@
             <% @user.logs.each do |log| %>
               <section class="slick-index">
                 <%= link_to image_tag(log.image.url(:medium)), log %>
-                <a> <%= link_to log.title, log %> </a>
-
-                <p> <%= log.comments.count %> Comments </p>
-
+                <a><%= link_to log.title, log %></a>
+                <p><%= log.description %></p>
+                <p><%= pluralize(log.votes.count, 'vote') %></p>
+                <p><%= pluralize(log.comments.count, 'comment')%></p>
               </section>
             <% end %>
           <% end %>
       </div>
-    </div>
   </section>
 
   <section class="user-likes">
+    <h2>Your Likes</h2>
+    <%= render 'votes/user_likes' %>
   </section>
 
   <section class="user-followers">

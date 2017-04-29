@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <div>
+  <div class="heart-icon">
     <% if vote = current_user.like_for(log) %>
       <%= link_to [log, vote], method: :delete do %>
         <i class="heart-glyph glyphicon glyphicon-heart"> </i>
@@ -10,5 +10,4 @@
       <% end %>
    <% end %>
   </div>
-  <%= log.likes %> Likes,
 <% end %>
