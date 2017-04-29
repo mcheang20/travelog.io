@@ -1,0 +1,14 @@
+<div>
+  <h1><%= @log.title %> Videos <%= link_to "back to log", log_path(@log), class: "pull-right" %></h1>
+  <div>
+    <% if @log.vids.empty? %>
+      <p> No Videos Posted<p>
+    <% else %>
+      <% @log.vids.each do |vid| %>
+        <div>
+          <%= video_tag vid.video.url(:medium), controls: true, type: "video/mp4", style: "max-width: 100%;" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
     resources :pics, only: [:show, :create, :destroy]
     resources :votes, only: [:create, :destroy]
+    resources :vids, only: [:show, :create, :destroy]
   end
   resources :notifications do
     collection do

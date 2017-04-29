@@ -2,6 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* all sections */
+section {
+  padding: 1% 5%;
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+    div {
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+}
+
 /* main content */
 .main-content {
   width: 85%;
@@ -14,7 +31,7 @@
 }
 /* log show page header */
 .log-header {
-  height: 500px;
+  height: 600px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,20 +41,11 @@
   .log-media {
     position: absolute;
     width: 42%;
-    top: 570px;
+    top: 550px;
     left: 10%;
   }
 }
 
-/* all sections */
-section {
-  padding: 0 30px;
-  &:after {
-    content: '';
-    display: block;
-    clear: both;
-  }
-}
 /* section main */
 .main {
   h1 {
@@ -47,13 +55,23 @@ section {
     margin: 0;
   }
   div {
-    width: 40%;
     float: left;
+  }
+  div:nth-child(1) {
+    width: 70%;
+  }
+  div:nth-child(2) {
+    text-align: center;
+    width: 30%;
+    img {
+      border-radius: 50px;
+    }
   }
 }
 
 /* section icons */
 .icons {
+  padding-top: 0;
   aside {
     width: 33%;
     float: left;
@@ -63,11 +81,23 @@ section {
     background: no-repeat center top;
     background-size: 50px 50px;
   }
+  div {
+    border-bottom: 1px solid rgba(1,1,1,.2);
+  }
+}
+
+/* log content */
+.log-content {
+  div {
+    border-bottom: 1px solid rgba(1,1,1,.2);
+  }
 }
 
 /* log index page */
 .log-index {
+  padding: 1%;
   aside {
+    position: relative;
     width: 33.3%;
     height: 400px;
     float: left;
@@ -79,9 +109,18 @@ section {
       text-align: center;
     }
   }
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
 }
 
 .log-desc {
   text-align: left;
   padding-left: 5%;
+  p {
+    margin: 0;
+    padding: 0;
+  }
 }

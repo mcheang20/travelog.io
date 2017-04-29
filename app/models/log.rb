@@ -6,6 +6,7 @@ class Log < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
   has_many :pics, dependent: :destroy
+  has_many :vids, dependent: :destroy
 
   belongs_to :user
   belongs_to :category
