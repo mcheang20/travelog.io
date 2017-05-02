@@ -1,0 +1,14 @@
+<% @logs.each do |log| %>
+  <aside>
+    <%= link_to image_tag(log.image.url(:medium)), log %>
+    <div class="log-desc">
+      <small><%= render partial: 'votes/like', locals: { log: log } %></small>
+      <span><%= link_to log.title, log %></span>
+      <p><%= log.description %> </p>
+      <p><%= pluralize(log.likes, 'like') %></p>
+      <small><%=  link_to log.user.username, user_path(log.user)%></small>
+      <small><%= pluralize(log.impressionist_count, 'view') %></small>
+      <small>Posted <%= time_ago_in_words(log.created_at) %> ago, </small>
+    </div>
+  </aside>
+<% end %>

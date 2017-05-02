@@ -142,11 +142,12 @@ nav::after {
   }
   a {
     color: white;
-    font-size: 1em;
+    font-size: .95em;
     font-weight: 200;
     display: inline-block;
     width: 130px;
     position: relative;
+    text-transform: uppercase;
     &:hover {
       color: black;
       text-decoration: none;

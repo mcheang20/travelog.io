@@ -1,23 +1,23 @@
-<div class="container main">
-  <h1 class="title-all">Explore <%= pluralize(@logs.count, 'adventure') %></h1>
-  <p class="wiki-sub-title"> Most Recent <%= link_to "See All","#"%></p>
-  <div class="row">
+<div>
+  <h1>Explore <%= pluralize(@logs.count, 'adventure') %></h1>
+  <p> Most Recent <%= link_to "See All","#"%></p>
+  <div>
     <%# <%= render 'wikis/showrecent' %>
   </div>
-  <div id="border"></div>
-  <p class="log-sub-title"> Most Popular <%= link_to "See All", "#"%></p>
+  <div></div>
+  <p> Most Popular <%= link_to "See All", "#"%></p>
   <div class="row">
     <%#  <%= render 'wikis/showtop' %>
   </div>
-  <div id="border"></div>
+  <div></div>
   <% if user_signed_in? %>
-    <p class="log-sub-title"> Your Likes <%= link_to "See All", "#"%> </p>
-    <div class="row">
+    <p> Your Likes <%= link_to "See All", "#"%> </p>
+    <div>
     <%#  <%= render 'wikis/showlikes'%>
     </div>
-    <div id="border"></div>
-    <p class="log-sub-title"> Your Followers <%= link_to "See All", "#"%> </p>
-      <div class="row">
+    <div></div>
+    <p> Your Followers <%= link_to "See All", "#"%> </p>
+      <div>
      <%#  <%= render 'wikis/showfollowed' %>
     </div>
   <% end %>

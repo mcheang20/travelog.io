@@ -3,7 +3,6 @@ class LogsController < ApplicationController
   impressionist actions: [:show]
 
   def index
-    @logs = Log.all
     if params[:search]
       @logs = Log.search(params[:search]).order("created_at DESC")
     else
@@ -12,7 +11,19 @@ class LogsController < ApplicationController
   end
 
   def all_logs
+   @logs = Log.all
+  end
+
+  def most_popular
     @logs = Log.all
+  end
+
+  def user_likes
+    @logs = current_user.votes
+  end
+
+  def followed_users
+    @logs = Log.followed_users(current_user.following).order('created_at DESC')
   end
 
   def show

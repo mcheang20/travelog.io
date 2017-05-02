@@ -23,4 +23,6 @@ class Log < ApplicationRecord
   def likes
     votes.sum(:value)
   end
+
+  scope :followed_users, -> (following_users) { where user_id: following_users }
 end
