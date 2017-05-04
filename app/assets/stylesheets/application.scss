@@ -21,7 +21,9 @@
  @import "font-awesome";
 
 html {
+  position: relative;
   font-size: 16px;
+  min-height: 100%;
 }
 
 body {
@@ -29,6 +31,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 /* alert banner */
 .alert-wrapper {
   padding: 15px;
@@ -116,22 +119,21 @@ nav::after {
     }
     li {
       position: relative;
+      }
     }
     &:after {
       content: '';
       display: block;
       clear: both;
     }
-  }
   li{
-    flex: 1 0 auto;
     padding: 0;
     text-align: center;
     &:hover {
       ul {
-        background-color: coral;
+        background-color: #F7AD3E;
         display: block;
-      }
+        }
       }
     ul {
       padding: 10px;
@@ -142,16 +144,22 @@ nav::after {
   }
   a {
     color: white;
-    font-size: .95em;
+    font-size: 1.1em;
     font-weight: 200;
     display: inline-block;
     width: 130px;
     position: relative;
-    text-transform: uppercase;
+    transition: .5s;
     &:hover {
-      color: black;
+      color: grey;
       text-decoration: none;
     }
+  }
+}
+
+.dropdown-links {
+  a {
+    font-size: 1em;
   }
 }
 
@@ -175,6 +183,17 @@ nav::after {
   img {
     height: 40px;
   }
+  a {
+    padding: 2% 0 10% 0;
+  }
+}
+
+/* search bar */
+.search-bar {
+  width: 23%;
+  div {
+    padding: 2%;
+  }
 }
 /* top level */
 nav > ul > li {
@@ -185,10 +204,15 @@ nav > ul > li > a {
   width: auto;
   padding: 10px 15px 10px 20px;
 }
+/* end header navigation */
 
 /* secondary navbar */
-.nav-index {
-  border-bottom: 1px solid rgba(1,1,1,.1);
+#nav-index {
+  border-bottom: 1px solid rgba(40,54,63,.2);
+  width: 100%;
+  z-index: 90;
+  transition: .5s;
+  top: 0;
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -203,7 +227,13 @@ nav > ul > li > a {
     padding: 10px 0 10px 0;
   }
   a{
-    font-size: 1.2em;
+    font-size: 1.1em;
+    color: #F7AD3E;
+    transition: .5s;
+    &:hover {
+      text-decoration: none;
+      color: #ea8f06;
+    }
   }
 }
 
@@ -215,7 +245,6 @@ nav > ul > li > a {
 }
 
 /* slick carousel styles */
-
 .slick-prev::before, .slick-next::before {
   color: #000;
 }
@@ -230,7 +259,13 @@ nav > ul > li > a {
 
 /* footer */
 footer {
-  div {
-    display: inline;
+  color: white;
+  background-color: #28363f;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  ul {
+    float: left;
+    list-style: none;
   }
 }

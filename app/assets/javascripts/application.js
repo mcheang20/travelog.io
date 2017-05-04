@@ -16,6 +16,15 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+$(document).ready(function(){
+   setTimeout(function(){
+     $('.alert-wrapper').fadeOut("slow", function(){
+       $(this).remove();
+     })
+   }, 5000);
+});
+
 $('.carousel').carousel({
   interval: false,
   pause: "false"
@@ -29,3 +38,15 @@ jQuery(document).ready(function(){
     dots: true
   });
 });
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("nav-index").style.position = "fixed";
+        document.getElementById("nav-index").style.background = "rgba(40,54,63,.7)";
+    } else {
+        document.getElementById("nav-index").style.position = "relative";
+        document.getElementById("nav-index").style.background = "none";
+    }
+}

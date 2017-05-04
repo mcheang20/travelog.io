@@ -1,49 +1,56 @@
 <div>
-<% if user_signed_in? %>
-<nav class="header-nav">
-  <span id="header-logo"><%= link_to image_tag("travelog_logo.png"), "#" %></span>
-  <ul>
-    <li><%= link_to "Learn More", "#" %></li>
-    <li>
-      <%= link_to "Regions", "#" %>
-      <ul>
-        <% category.each do |category| %>
-          <li><%= link_to category.name, category %></li>
-        <% end %>
-      </ul>
-    </li>
-    <li>
-      <%= link_to "All Logs", all_logs_path %>
-    </li>
-    <li><%= link_to "New Log", new_log_path %></li>
-    <li>
-      <div class="search-bar">
-        <%= form_tag(logs_path :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search Logs" %>
-          <%= submit_tag "Search", :name => nil, class: 'btn btn-default' %>
-        <% end %>
-      </div>
-    </li>
-    <li><%= link_to "", conversations_path, class: "glyphicon glyphicon-envelope" %></li>
+  <nav class="header-nav">
+    <span id="header-logo"><%= link_to image_tag("travelog_logo.png"), root_path %></span>
+    <ul>
+      <li><%= link_to "Learn More", "#" %></li>
 
-    <li data-behavior="notifications">
-      <%= link_to "", "#", class: "glyphicon glyphicon-bell"%>
-      <ul data-behavior="notification-items">
-        <li><span data-behavior="unread-count"></span></li>
-      </ul>
-    </li>
+      <li>
+        <%= link_to "Regions", "#" %>
+        <ul class="dropdown-links">
+          <% category.each do |category| %>
+            <li><%= link_to category.name, category %></li>
+          <% end %>
+        </ul>
+      </li>
 
-    <li class="user-dropdown">
-      <%= link_to image_tag(current_user.image.url(:thumb)), user_path(current_user) %>
-      <ul>
-        <li><%= link_to current_user.username, user_path(current_user) %></li>
-        <li><%= link_to 'Edit profile', edit_user_path(current_user) %></li>
-        <li><%= link_to "Upgrade to Premium", new_charge_path %></li>
-        <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-      </ul>
-    </li>
+      <li>
+        <%= link_to "All Logs", all_logs_path %>
+      </li>
 
-  </ul>
-</nav>
-<% end %>
+      <li class="search-bar">
+        <div>
+          <%= form_tag(logs_path :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Logs" %>
+            <%= submit_tag "Search", :name => nil, class: 'btn btn-default' %>
+          <% end %>
+        </div>
+      </li>
+
+      <% if user_signed_in? %>
+        <li><%= link_to "New Log", new_log_path %></li>
+
+        <li><%= link_to "", conversations_path, class: "glyphicon glyphicon-envelope" %></li>
+
+        <li data-behavior="notifications">
+          <%= link_to "", "#", class: "glyphicon glyphicon-bell"%>
+          <ul class="dropdown-links" data-behavior="notification-items">
+            <li><span data-behavior="unread-count"></span></li>
+          </ul>
+        </li>
+
+        <li class="user-dropdown">
+          <%= link_to image_tag(current_user.image.url(:thumb)), user_path(current_user) %>
+          <ul class="dropdown-links">
+            <li><%= link_to current_user.username, user_path(current_user) %></li>
+            <li><%= link_to 'Edit profile', edit_user_path(current_user) %></li>
+            <li><%= link_to "Upgrade to Premium", new_charge_path %></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </li>
+      <% else %>
+        <li class="pull-right"><%= link_to "Sign Up", new_user_registration_path, class: 'btn'  %></li>
+        <li class="pull-right"><%= link_to "Log In", new_user_session_path, class: 'btn'  %></li>
+      <% end %>
+    </ul>
+  </nav>
 </div>

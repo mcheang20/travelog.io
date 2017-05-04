@@ -10,8 +10,8 @@
 
   <body>
 
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/header' unless current_page?(root_path) %>
+    <%= render 'layouts/navbar' unless current_page?(root_path) %>
 
     <% if flash[:notice] %>
     <div class="alert-wrapper">
@@ -31,7 +31,7 @@
   <% end %>
   <%= yield %>
 
-  <%= render 'layouts/footer' %>
+  <%= render 'layouts/footer' unless current_page?(root_path) %>
 
   </body>
 </html>

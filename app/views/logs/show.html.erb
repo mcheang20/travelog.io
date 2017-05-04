@@ -8,6 +8,7 @@
       <%= link_to "View All Videos", "#", class: 'btn btn-default' %>
     </div>
   </header>
+
   <div class="main-content">
     <section class="main">
       <div>
@@ -58,7 +59,7 @@
           <span><%= render 'comments/form', comment: Comment.new, log: @log %></span>
         </div>
       <% end %>
-        <h4><i class="fa fa-comments fa-lg" aria-hidden="true"></i> Comments (<%= @log.comments.count %> comments)</h4>
+        <h4><i class="fa fa-comments fa-lg" aria-hidden="true"></i> Comments (<%=pluralize(@log.comments.count, 'comment') %>)</h4>
         <%= render @log.comments %>
       </div>
     </section>
@@ -68,22 +69,17 @@
 
     <section class="user-controls">
       <% if user_is_authorized_for_log?(@log)%>
-<<<<<<< HEAD
         <div>
           <h3><i class="fa fa-picture-o" aria-hidden="true"></i> Add Images</h3>
-          <%= render 'pics/form', pic: Pic.new, log: @log %>
-=======
-        <div class="wiki-attachments row col-md-10">
-          <h3><i class="fa fa-picture-o" aria-hidden="true"></i> Add Images</h3>
           <%= render 'pics/form', pic: Pic.new, log: @log%>
->>>>>>> css-styles
+
           <h3><i class="fa fa-video-camera" aria-hidden="true"></i> Add Videos</h3>
           <%= render 'vids/form', vid: Vid.new, log: @log %>
         </div>
       <% end %>
     </section>
-  </div>
 
-  <div class="side-content">
+    <div class="side-content">
+    </div>
   </div>
 </div>
