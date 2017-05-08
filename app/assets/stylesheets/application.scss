@@ -19,6 +19,8 @@
  @import "bootstrap";
  @import "font-awesome-sprockets";
  @import "font-awesome";
+ @import url('https://fonts.googleapis.com/css?family=Cabin:500');
+ @import url('https://fonts.googleapis.com/css?family=Rubik:400,500');
 
 html {
   position: relative;
@@ -30,6 +32,30 @@ body {
   font-size: 16px;
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-family: 'Cabin', sans-serif;
+}
+
+h2 {
+  font-family: 'Cabin', sans-serif;
+}
+
+h3 {
+  font-family: 'Cabin', sans-serif;
+}
+
+h4 {
+  font-family: 'Cabin', sans-serif;
+}
+
+p {
+  font-family: 'Rubik', sans-serif;
+}
+
+label {
+  font-family: 'Cabin', sans-serif;
 }
 
 /* alert banner */
@@ -182,9 +208,7 @@ nav::after {
 .user-dropdown {
   img {
     height: 40px;
-  }
-  a {
-    padding: 2% 0 10% 0;
+    margin-top: -5px;
   }
 }
 
@@ -267,5 +291,23 @@ footer {
   ul {
     float: left;
     list-style: none;
+  }
+}
+
+/* subscribe  page */
+.upgrade-page {
+  background-image: url("http://www.imemories.com/images/whyimemories/xwhyimemories_banner.jpg.pagespeed.ic.LweMbTL74f.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 650px;
+  section {
+    padding: 10% 25% 0 0;
+    text-align: center;
+    h1 {
+      font-size: 3.5em;
+    }
+    h2 {
+      font-size: 2em;
+    }
   }
 }

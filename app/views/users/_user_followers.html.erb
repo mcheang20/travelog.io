@@ -1,0 +1,11 @@
+<% if user_followers_nil?  %>
+  <p>No followers.</p>
+<% else %>
+    <% @user.followers.each do |follower| %>
+    <div>
+      <%= image_tag(follower.image.url(:medium)) %>
+      <p><%= link_to follower.username, user_path(follower) %></p>
+      <p><%= follower.logs.count %> Posts </p>
+    </div>
+  <% end %>
+<% end %>

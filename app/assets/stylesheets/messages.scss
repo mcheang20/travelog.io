@@ -1,3 +1,40 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* messages index */
+.ui-segment {
+  padding: 0 5% 0 5%;
+}
+
+/* messages box */
+.message-box {
+  background-color: #E2E2E2;
+  padding: 0 5% 0 5%;
+  h1 {
+    margin: 0;
+  }
+  textarea {
+    margin-bottom: 10px;
+  }
+}
+
+.msg-item {
+  padding: 0;
+  margin: 1% 0 1% 0;
+}
+
+.msg-content {
+  background-color: white;
+  padding: 10px;
+  img {
+    height: 80px;
+    border-radius: 50px;
+    margin: 0 1% 0 0 ;
+  }
+}
+
+.list-msg {
+  padding: 0 0 0 10%;
+  font-size: 1.5em;
+}

@@ -4,7 +4,7 @@
 
 /* all sections */
 section {
-  padding: 1% 5%;
+  padding: 0 5% 0 5%;
   &:after {
     content: '';
     display: block;
@@ -54,9 +54,11 @@ section {
 .main {
   h1 {
     margin: 0;
+    font-size: 3.3em;
   }
   h3 {
     margin: 0;
+    font-size: 1.8em;
   }
   div {
     float: left;
@@ -76,7 +78,7 @@ section {
 
 /* section icons */
 .icons {
-  padding-top: 0 10% 0 10%;
+  padding: 1%;
   aside {
     width: 33%;
     float: left;
@@ -95,6 +97,8 @@ section {
     h3 {
       margin: 0;
       font-size: 1.1em;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 100;
     }
   }
   div {
@@ -107,25 +111,44 @@ section {
     border-bottom: 1px solid rgba(1,1,1,.2);
     border-top: 1px solid rgba(1,1,1,.2);
   }
+  h2 {
+    font-size: 2em;
+  }
+  p {
+    font-family: 'Rubik', sans-serif;
+  }
 }
+
+/* log comments section */
+.log-comments {
+  h4 {
+    font-size: 1.5em;
+  }
+}
+
+/* log media controls */
 
 /* log index page */
 .log-index {
-  padding: 0 2% 5% 2%;
+  padding: 0 2% 7% 2%;
+  background-color: #E2E2E2;
   h1 {
-    padding: 0 2%;
+    padding: 1% 2%;
+    margin: 0;
     text-transform: uppercase;
+    font-size: 3em;
   }
   aside {
     position: relative;
-    width: 33.3%;
-    height: 400px;
+    background-color: white;
+    width: 31.3%;
+    height: 350px;
     float: left;
     text-align: center;
-    padding: 10px;
+    margin: 1%;
     img {
-      width: 90%;
-      height: 65%;
+      width: 100%;
+      height: 73%;
       text-align: center;
     }
   }
@@ -134,13 +157,33 @@ section {
     display: block;
     clear: both;
   }
+  .glyphicon {
+    transition: .5s;
+    &:hover {
+      color: #b52121;
+    }
+  }
 }
 
 .log-desc {
   text-align: left;
-  padding-left: 5%;
+  padding: 0 0 2% 2%;
+  span {
+    font-size: 1.1em;
+    font-family: 'Rubik', sans-serif;
+  }
   p {
     margin: 0;
     padding: 0;
+    color: #6d6767;
+    font-weight: 200;
   }
+  small {
+    color: #6d6767;
+  }
+}
+
+/* new log page */
+.new-log-page {
+  padding-bottom: 8%;
 }

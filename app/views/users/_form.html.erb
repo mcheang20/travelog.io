@@ -1,7 +1,7 @@
 <div class="container edit-profile-form">
   <div class="profile-image-form">
     <h1><%= @user.username %></h1>
-    <div class="profile-image"><%= image_tag(@user.image.url(:medium)) %></div>
+    <div><%= image_tag(@user.image.url(:medium)) %></div>
     <%= form_for @user, html: { multipart: true } do |f| %>
       <div class="form-group">
         <%= f.label "Edit Your profile picture" %>

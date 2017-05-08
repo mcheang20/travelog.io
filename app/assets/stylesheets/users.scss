@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* all user page */
+.user-page {
+  padding: 0 0 10% 0;
+  background-color: #E2E2E2;
+  section {
+    background-color: white;
+  }
+}
 /* user page header */
 .user-header {
   border: 1px solid rgba(1,1,1,.1);
@@ -48,5 +56,19 @@
     margin: 0;
     padding: 0;
     line-height: 1;
+  }
+}
+
+/* user edit form */
+.edit-profile-form {
+  padding: 0 0 10% 0;
+}
+.profile-image-form {
+  text-align: center;
+  input {
+    margin: 0 auto;
+  }
+  img {
+    border-radius: 100px;
   }
 }

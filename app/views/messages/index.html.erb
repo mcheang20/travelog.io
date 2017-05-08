@@ -1,10 +1,10 @@
-<div class="container message-box">
-  <h1 class="title-all">Send a message </h1>
+<div class="message-box">
+  <h1>Send a message </h1>
   <p>Back to <%= link_to "Messages", conversations_path %></p>
   <% if @over_ten %>
     <%= link_to 'Show Previous', '?m=all' %>
   <% end %>
-  <div class="ui segment">
+  <div class="ui-record">
     <% @messages.each do |message| %>
       <% if message.body %>
       <% user = User.find(message.user_id) %>
