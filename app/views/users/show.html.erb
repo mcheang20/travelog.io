@@ -21,9 +21,9 @@
           <p><%= link_to "Edit Profile", edit_user_path, class: 'btn btn-default'%><p>
         <% else %>
           <% if current_user_is_following(current_user.id, @user.id) %>
-            <%= link_to 'Unfollow', unfollow_user_path(@user.username), remote: true,  class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
+            <div class="follow-tag"><%= link_to 'Unfollow', unfollow_user_path(@user.username), remote: true,  class: 'btn unfollow-button', id: 'unfollow-button', method: :post %></div>
           <% else %>
-            <div class="follow-tag pull-right"><%= link_to 'Follow', follow_user_path(@user.username), remote: true, class: 'btn follow-button', id: 'follow-button', method: :post %></div>
+            <div class="follow-tag"><%= link_to 'Follow', follow_user_path(@user.username), remote: true, class: 'btn follow-button', id: 'follow-button', method: :post %></div>
           <% end %>
       <% end %>
       <% if current_user.id == @user.id %>
@@ -36,32 +36,34 @@
     </div>
   </header>
 
-  <section class="user-posts">
-    <h2>Your Posts</h2>
-      <div class="scroller">
-        <% if @user.logs == nil %>
-          <p> You havent posted anything. </p>
-          <% else %>
-            <% @user.logs.each do |log| %>
-              <section class="slick-index">
-                <%= link_to image_tag(log.image.url(:medium)), log %>
-                <a><%= link_to log.title, log %></a>
-                <p><%= log.description %></p>
-                <p><%= pluralize(log.votes.count, 'vote') %></p>
-                <p><%= pluralize(log.comments.count, 'comment')%></p>
-              </section>
+  <div class="user-content">
+    <section class="user-posts">
+      <h2>Your Posts</h2>
+        <div class="scroller">
+          <% if @user.logs == nil %>
+            <p> You havent posted anything. </p>
+            <% else %>
+              <% @user.logs.each do |log| %>
+                <section class="slick-index">
+                  <%= link_to image_tag(log.image.url(:medium)), log %>
+                  <a><%= link_to log.title, log %></a>
+                  <p><%= log.description %></p>
+                  <p><%= pluralize(log.votes.count, 'vote') %></p>
+                  <p><%= pluralize(log.comments.count, 'comment')%></p>
+                </section>
+              <% end %>
             <% end %>
-          <% end %>
-      </div>
-  </section>
+        </div>
+    </section>
 
-  <section class="user-likes">
-    <h2>Your Likes</h2>
-    <%= render 'votes/user_likes' %>
-  </section>
+    <section class="user-likes">
+      <h2>Your Likes</h2>
+      <%= render 'votes/user_likes' %>
+    </section>
 
-  <section class="user-followers">
-    <h2>Your Followers</h2>
-    <%= render 'users/user_followers' %>
-  </section>
+    <section class="user-followers">
+      <h2>Your Followers</h2>
+      <%= render 'users/user_followers' %>
+    </section>
+  </div>
 </div>

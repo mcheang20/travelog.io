@@ -20,7 +20,7 @@ section {
 }
 /* whole log page */
 #log-page {
-  padding: 0 0 5% 0;
+  padding: 0 0 8% 0;
 }
 
 /* main content */
@@ -29,10 +29,17 @@ section {
   border-right: 1px solid rgba(1,1,1,.1);
 }
 
+@media screen and (max-width: 1000px) {
+  .main-content {
+    width: 100%;
+  }
+}
+
 /* side content */
 .side-content {
   width: 15%;
 }
+
 /* log show page header */
 .log-header {
   height: 600px;
@@ -43,15 +50,37 @@ section {
     width: 100%;
   }
   .log-media {
-    position: absolute;
+    position: relative;
     width: 42%;
-    top: 550px;
+    top: 75%;
     left: 10%;
   }
 }
 
+@media screen and (max-width:600px) {
+  .log-header {
+    height: 300px;
+    .log-media {
+      top: 15%;
+      a {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:601px) and (max-width:1000px) {
+  .log-header {
+    height: 400px;
+    .log-media {
+      top: 20%;
+    }
+  }
+}
 /* section main */
 .main {
+  padding-top: 1%;
+  border-bottom: 1px solid rgba(1,1,1,.1);
   h1 {
     margin: 0;
     font-size: 3.3em;
@@ -72,6 +101,38 @@ section {
     img {
       border-radius: 50px;
       height: 100px;
+    }
+  }
+}
+
+@media screen and (max-width:360px){
+  .main {
+    h1 {
+      font-size: 1.5em;
+    }
+    h3 {
+      font-size: 1em;
+    }
+    div:nth-child(2){
+      img {
+        height: 60px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:550px) and (min-width: 361px) {
+  .main {
+    h1 {
+      font-size: 2.5em;
+    }
+    h3 {
+      font-size: 1.5em;
+    }
+    div:nth-child(2){
+      img {
+        height: 80px;
+      }
     }
   }
 }
@@ -105,6 +166,19 @@ section {
   }
 }
 
+@media screen and (max-width:550px) {
+  .icons {
+    .log-data {
+      i {
+        font-size: 1.5em;
+      }
+      h3 {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
 /* log content */
 .log-content {
   div {
@@ -121,12 +195,17 @@ section {
 
 /* log comments section */
 .log-comments {
+  padding: 0 5% 5% 5%;
   h4 {
     font-size: 1.5em;
   }
 }
 
-/* log media controls */
+@media screen and (max-width: 560px) {
+  .log-comments {
+    padding: 0 5% 15% 5%;
+  }
+}
 
 /* log index page */
 .log-index {
@@ -183,7 +262,28 @@ section {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .log-index {
+    aside {
+      width: 98%;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 601px) {
+  .log-index {
+    aside {
+      width: 48%;
+    }
+  }
+}
+
 /* new log page */
 .new-log-page {
   padding-bottom: 8%;
+}
+
+/* all logs page */
+.all-logs {
+  padding: 0 5%;
 }

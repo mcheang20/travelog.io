@@ -16,3 +16,11 @@
     margin-left: 100px;
   }
 }
+
+@media screen and (max-width:450px) {
+  .comment-item {
+    img {
+      height: 40px;
+    }
+  }
+}

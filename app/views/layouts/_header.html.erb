@@ -1,7 +1,33 @@
 <div>
   <nav class="header-nav">
-    <span id="header-logo"><%= link_to image_tag("travelog_logo.png"), root_path %></span>
-    <ul>
+    <a class="mobile-menu"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></a> <!-- mobile navigation -->
+
+    <ul class="user-links">
+      <span id="header-logo"><%= link_to image_tag("travelog_logo.png"), root_path %></span>
+      <% if user_signed_in? %>
+        <li class="user-dropdown">
+          <%= link_to image_tag(current_user.image.url(:thumb)), user_path(current_user) %>
+          <ul class="dropdown-links">
+            <li><%= link_to current_user.username, user_path(current_user) %></li>
+            <li><%= link_to 'Edit profile', edit_user_path(current_user) %></li>
+            <li><%= link_to "Upgrade to Premium", new_charge_path %></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </li>
+
+        <li><%= link_to "", conversations_path, class: "glyphicon glyphicon-envelope" %></li>
+
+        <li data-behavior="notifications">
+          <%= link_to "", "#", class: "glyphicon glyphicon-bell"%>
+          <ul class="dropdown-links" data-behavior="notification-items">
+            <li><span data-behavior="unread-count"></span></li>
+          </ul>
+        </li>
+
+      <% end %>
+    </ul>
+
+    <ul class="main-links">
       <li><%= link_to "Learn More", "#" %></li>
 
       <li>
@@ -28,25 +54,6 @@
 
       <% if user_signed_in? %>
         <li><%= link_to "New Log", new_log_path %></li>
-
-        <li><%= link_to "", conversations_path, class: "glyphicon glyphicon-envelope" %></li>
-
-        <li data-behavior="notifications">
-          <%= link_to "", "#", class: "glyphicon glyphicon-bell"%>
-          <ul class="dropdown-links" data-behavior="notification-items">
-            <li><span data-behavior="unread-count"></span></li>
-          </ul>
-        </li>
-
-        <li class="user-dropdown">
-          <%= link_to image_tag(current_user.image.url(:thumb)), user_path(current_user) %>
-          <ul class="dropdown-links">
-            <li><%= link_to current_user.username, user_path(current_user) %></li>
-            <li><%= link_to 'Edit profile', edit_user_path(current_user) %></li>
-            <li><%= link_to "Upgrade to Premium", new_charge_path %></li>
-            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-          </ul>
-        </li>
       <% else %>
         <li class="pull-right"><%= link_to "Sign Up", new_user_registration_path, class: 'btn'  %></li>
         <li class="pull-right"><%= link_to "Log In", new_user_session_path, class: 'btn'  %></li>

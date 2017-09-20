@@ -50,3 +50,12 @@ function scrollFunction() {
         document.getElementById("nav-index").style.background = "none";
     }
 }
+
+// mobile nav
+$(document).ready(function(){
+  if($(window).width() < 1150){
+    $(".mobile-menu").click(function(){
+        $(".main-links").slideToggle();
+    })
+  }
+});

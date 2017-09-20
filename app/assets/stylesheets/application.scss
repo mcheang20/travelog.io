@@ -21,6 +21,7 @@
  @import "font-awesome";
  @import url('https://fonts.googleapis.com/css?family=Cabin:500');
  @import url('https://fonts.googleapis.com/css?family=Rubik:400,500');
+ @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400');
 
 html {
   position: relative;
@@ -34,29 +35,7 @@ body {
   padding: 0;
 }
 
-h1 {
-  font-family: 'Cabin', sans-serif;
-}
-
-h2 {
-  font-family: 'Cabin', sans-serif;
-}
-
-h3 {
-  font-family: 'Cabin', sans-serif;
-}
-
-h4 {
-  font-family: 'Cabin', sans-serif;
-}
-
-p {
-  font-family: 'Rubik', sans-serif;
-}
-
-label {
-  font-family: 'Cabin', sans-serif;
-}
+h1, h2, h3, h4, p, ,a, label{ font-family: 'Quicksand', sans-serif;}
 
 /* alert banner */
 .alert-wrapper {
@@ -136,7 +115,6 @@ nav::after {
   ul {
     list-style: none;
     margin: 0;
-    padding: 1% 0 0 7%;
     ul {
       position: absolute;
       top: 100%;
@@ -206,10 +184,22 @@ nav::after {
 }
 
 .user-dropdown {
+  float: right;
   img {
     height: 40px;
     margin-top: -5px;
   }
+}
+
+.user-links {
+  li {
+    float: right;
+    padding: 1% 0 0 0;
+  }
+}
+
+.main-links {
+  padding: 1% 0 4% 15%;
 }
 
 /* search bar */
@@ -308,6 +298,48 @@ footer {
     }
     h2 {
       font-size: 2em;
+    }
+  }
+}
+
+/* mobile menu */
+.header-nav .mobile-menu {
+  display: none;
+}
+
+@media screen and (max-width: 1150px){
+ .header-nav .mobile-menu {
+    display: block;
+    float: right;
+    width: auto;
+    padding: 2%;
+  }
+  .search-bar {
+    display: none;
+  }
+  .main-links {
+    display: none;
+    padding: 0;
+    li {
+      width: 100%;
+    }
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+  #header-logo {
+    position: relative;
+    text-align: inherit;
+  }
+}
+
+@media screen and (max-width:550px){
+  .user-links{
+    padding: 2% 25% 0 0;
+    li{
+      width: 70px;
     }
   }
 }

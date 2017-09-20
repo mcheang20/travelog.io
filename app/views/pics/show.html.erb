@@ -1,9 +1,9 @@
-<div>
+<div class="log-pics">
 <h1><%= @log.title %> Posted Images <%= link_to "back to log", log_path(@log), class: "pull-right" %></h1>
   <% if @log.pics.empty? %>
     <p> No Images Posted<p>
   <% else %>
-    <div>
+    <div class="pic-index">
       <% @log.pics.each do |pic| %>
         <div>
           <%=link_to (image_tag (pic.image.url(:medium))), pic.image.url(:big), data: {lightbox: "eaxmple-set", title: pic.caption }%></br>

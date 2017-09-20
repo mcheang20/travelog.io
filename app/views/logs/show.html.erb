@@ -53,8 +53,8 @@
 
     <section class="log-comments">
       <div>
-      <h4>New Comment</h4>
       <% if current_user %>
+        <h4>New Comment</h4>
         <div>
           <span><%= render 'comments/form', comment: Comment.new, log: @log %></span>
         </div>

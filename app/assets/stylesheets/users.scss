@@ -8,8 +8,17 @@
   background-color: #E2E2E2;
   section {
     background-color: white;
+    width: 95%;
+    padding: 10px 0;
+    margin-bottom: 20px;
   }
 }
+
+/* user content */
+.user-content {
+  text-align: -webkit-center;
+}
+
 /* user page header */
 .user-header {
   border: 1px solid rgba(1,1,1,.1);
@@ -32,6 +41,16 @@
     content: '';
     display: block;
     clear: both;
+  }
+}
+
+/* follow button */
+.follow-tag {
+  background-color: #F7AD3E;
+  margin-right: 10px;
+  border-radius: 5px;
+  a {
+    color: white;
   }
 }
 
@@ -69,6 +88,11 @@
     margin: 0 auto;
   }
   img {
-    border-radius: 100px;
+    border-radius: 50%;
   }
+}
+
+/* slick controls */
+.slick-prev {
+  z-index: 100;
 }

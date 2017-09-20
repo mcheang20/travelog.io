@@ -14,6 +14,7 @@
   img{
     width: 100%;
     height: 100vh;
+    object-fit: cover;
   }
 }
 
@@ -47,6 +48,11 @@
 }
 
 //carousel captions
+.carousel-caption {
+  left: 0 !important;
+  right: 0 !important;
+}
+
 #capOne, #capTwo, #capThree{
   margin: 0 auto;
   padding-bottom: 250px;
